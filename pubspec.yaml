@@ -10,17 +10,16 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  # flutter_blue: 
-  #   path: ./../flutter_blue  
-  esc_pos_utils_plus:  ^2.0.1+6
-    # path: ./../esc_pos_utils_plus
-  blue_thermal_printer: ^1.2.3          
+  # flutter_blue:
+  #   path: ./../flutter_blue
+  esc_pos_utils_plus: ^2.0.2
+  blue_thermal_printer: ^1.2.3
   network_info_plus: ^4.0.2
   easy_logger: ^0.0.2
   printing: ^5.11.0
   win32: ^5.0.7
   ffi: ^2.1.0
-  flutter_usb_printer:  ^0.1.0
+  flutter_usb_printer: ^0.1.0+1
 
 dev_dependencies:
   flutter_test:
@@ -36,15 +35,15 @@ flutter:
   # be modified. They are used by the tooling to maintain consistency when
   # adding or updating assets for this project.
   # plugin:
-    # platforms:
-    # This plugin project was generated without specifying any
-    # platforms with the `--platform` argument. If you see the `some_platform` map below, remove it and
-    # then add platforms following the instruction here:
-    # https://flutter.dev/docs/development/packages-and-plugins/developing-packages#plugin-platforms
-    # -------------------
-      # some_platform:
-      #   pluginClass: somePluginClass
-    # -------------------
+  # platforms:
+  # This plugin project was generated without specifying any
+  # platforms with the `--platform` argument. If you see the `some_platform` map below, remove it and
+  # then add platforms following the instruction here:
+  # https://flutter.dev/docs/development/packages-and-plugins/developing-packages#plugin-platforms
+  # -------------------
+  # some_platform:
+  #   pluginClass: somePluginClass
+  # -------------------
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:
