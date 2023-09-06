@@ -116,10 +116,11 @@ packages:
   esc_pos_utils:
     dependency: "direct main"
     description:
-      name: esc_pos_utils
-      sha256: "8ec0013d7a7f1e790ced6b09b95ce3bf2c6f9468a3e2bc49ece000761d86c6f8"
-      url: "https://pub.dev"
-    source: hosted
+      path: "."
+      ref: HEAD
+      resolved-ref: "56dd7ed7b6eb017766b3c1ad9ee0c2fce266fc2a"
+      url: "https://github.com/thitlwincoder/esc_pos_utils.git"
+    source: git
     version: "1.1.0"
   fake_async:
     dependency: transitive
@@ -204,10 +205,10 @@ packages:
     dependency: "direct overridden"
     description:
       name: image
-      sha256: "8e9d133755c3e84c73288363e6343157c383a0c6c56fc51afcc5d4d7180306d6"
+      sha256: a72242c9a0ffb65d03de1b7113bc4e189686fc07c7147b8b41811d0dd0e0d9bf
       url: "https://pub.dev"
     source: hosted
-    version: "3.3.0"
+    version: "4.0.17"
   js:
     dependency: transitive
     description:
