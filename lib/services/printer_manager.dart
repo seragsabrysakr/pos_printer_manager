@@ -1,4 +1,4 @@
-import 'package:esc_pos_utils_plus/esc_pos_utils.dart';
+import 'package:esc_pos_utils/esc_pos_utils.dart';
 import 'package:pos_printer_manager/enums/connection_response.dart';
 import 'package:pos_printer_manager/models/pos_printer.dart';
 
@@ -17,7 +17,8 @@ abstract class PrinterManager {
 
   Future<ConnectionResponse> connect({Duration? timeout});
 
-  Future<ConnectionResponse> writeBytes(List<int> data, {bool isDisconnect = true});
+  Future<ConnectionResponse> writeBytes(List<int> data,
+      {bool isDisconnect = true});
 
   Future<ConnectionResponse> disconnect({Duration? timeout});
 
