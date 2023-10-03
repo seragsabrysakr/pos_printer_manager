@@ -1,6 +1,7 @@
 import 'dart:ffi';
 import 'dart:io';
 import 'dart:typed_data';
+import 'package:esc_pos_utils_plus/esc_pos_utils.dart';
 import 'package:ffi/ffi.dart';
 import 'package:flutter_usb_printer/flutter_usb_printer.dart';
 import 'package:win32/win32.dart';
@@ -9,7 +10,6 @@ import 'package:pos_printer_manager/pos_printer_manager.dart';
 import 'package:pos_printer_manager/services/printer_manager.dart';
 import 'extension.dart';
 import 'usb_service.dart';
-import 'package:esc_pos_utils/esc_pos_utils.dart';
 
 /// USB Printer
 class USBPrinterManager extends PrinterManager {
