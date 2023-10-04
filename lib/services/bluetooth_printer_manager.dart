@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:io';
 import 'dart:typed_data';
-import 'package:blue_thermal_printer/blue_thermal_printer.dart' as themal;
 import 'package:esc_pos_utils/esc_pos_utils.dart';
 import 'package:pos_printer_manager/models/pos_printer.dart';
 import 'package:pos_printer_manager/pos_printer_manager.dart';
@@ -11,7 +10,6 @@ import 'printer_manager.dart';
 /// Bluetooth Printer
 class BluetoothPrinterManager extends PrinterManager {
   Generator? generator;
-  themal.BlueThermalPrinter bluetooth = themal.BlueThermalPrinter.instance;
   // fblue.FlutterBlue flutterBlue = fblue.FlutterBlue.instance;
   // fblue.BluetoothDevice fbdevice;
 
@@ -46,10 +44,7 @@ class BluetoothPrinterManager extends PrinterManager {
       // if (index < 0) await fbdevice.connect();
 
       // } else
-      if (Platform.isAndroid || Platform.isIOS) {
-        var device = themal.BluetoothDevice(printer.name, printer.address);
-        await bluetooth.connect(device);
-      }
+      if (Platform.isAndroid || Platform.isIOS) {}
 
       this.isConnected = true;
       this.printer.connected = true;
@@ -80,51 +75,11 @@ class BluetoothPrinterManager extends PrinterManager {
   @override
   Future<ConnectionResponse> writeBytes(List<int> data,
       {bool isDisconnect = true}) async {
-    try {
-      if (!isConnected) {
-        await connect();
-      }
-      if (Platform.isAndroid || Platform.isIOS) {
-        if ((await (bluetooth.isConnected as FutureOr<bool>))) {
-          Uint8List message = Uint8List.fromList(data);
-          PosPrinterManager.logger.warning("message.length ${message.length}");
-          await bluetooth.writeBytes(message);
-          if (isDisconnect) {
-            await disconnect();
-          }
-          return ConnectionResponse.success;
-        }
-        return ConnectionResponse.printerNotConnected;
-      }
-      //  else if (Platform.isIOS) {
-      //   // var services = (await fbdevice.discoverServices());
-      //   // var service = services.firstWhere((e) => e.isPrimary);
-      //   // var charactor =
-      //   //     service.characteristics.firstWhere((e) => e.properties.write);
-      //   // await charactor?.write(data, withoutResponse: true);
-      //   return ConnectionResponse.success;
-      // }
-      return ConnectionResponse.unsupport;
-    } catch (e) {
-      print("Error : $e");
-      return ConnectionResponse.unknown;
-    }
+    return ConnectionResponse.printerNotConnected;
   }
 
   /// [timeout]: milliseconds to wait after closing the socket
   Future<ConnectionResponse> disconnect({Duration? timeout}) async {
-    if (Platform.isAndroid || Platform.isIOS) {
-      await bluetooth.disconnect();
-      this.isConnected = false;
-    }
-    //  else if (Platform.isIOS) {
-    // await fbdevice.disconnect();
-    // this.isConnected = false;
-    // }
-
-    if (timeout != null) {
-      await Future.delayed(timeout, () => null);
-    }
     return ConnectionResponse.success;
   }
 }

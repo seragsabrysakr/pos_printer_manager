@@ -3,7 +3,6 @@ import 'dart:io';
 import 'dart:typed_data';
 import 'package:esc_pos_utils/esc_pos_utils.dart';
 import 'package:ffi/ffi.dart';
-import 'package:flutter_usb_printer/flutter_usb_printer.dart';
 import 'package:win32/win32.dart';
 import 'package:pos_printer_manager/models/pos_printer.dart';
 import 'package:pos_printer_manager/pos_printer_manager.dart';
@@ -16,7 +15,6 @@ class USBPrinterManager extends PrinterManager {
   Generator? generator;
 
   /// usb_serial
-  var usbPrinter = FlutterUsbPrinter();
 
   /// [win32]
   Pointer<IntPtr>? phPrinter = calloc<HANDLE>();
@@ -79,17 +77,7 @@ class USBPrinterManager extends PrinterManager {
         return Future<ConnectionResponse>.value(ConnectionResponse.timeout);
       }
     } else if (Platform.isAndroid) {
-      var usbDevice = await usbPrinter.connect(vendorId!, productId!);
-      if (usbDevice != null) {
-        print("vendorId $vendorId, productId $productId ");
-        this.isConnected = true;
-        this.printer.connected = true;
-        return Future<ConnectionResponse>.value(ConnectionResponse.success);
-      } else {
-        this.isConnected = false;
-        this.printer.connected = false;
-        return Future<ConnectionResponse>.value(ConnectionResponse.timeout);
-      }
+      return Future<ConnectionResponse>.value(ConnectionResponse.success);
     } else {
       return Future<ConnectionResponse>.value(ConnectionResponse.timeout);
     }
@@ -121,12 +109,6 @@ class USBPrinterManager extends PrinterManager {
       PosPrinterManager.logger.error("disconnect");
       return ConnectionResponse.success;
     } else if (Platform.isAndroid) {
-      await usbPrinter.close();
-      this.isConnected = false;
-      this.printer.connected = false;
-      if (timeout != null) {
-        await Future.delayed(timeout, () => null);
-      }
       return ConnectionResponse.success;
     }
     return ConnectionResponse.timeout;
@@ -202,26 +184,6 @@ class USBPrinterManager extends PrinterManager {
         PosPrinterManager.logger.info("connect()");
       }
 
-      PosPrinterManager.logger("start write");
-      var bytes = Uint8List.fromList(data);
-      int max = 16384;
-
-      /// maxChunk limit on android
-      var datas = bytes.chunkBy(max);
-      await Future.forEach(
-          datas, (dynamic data) async => await usbPrinter.write(data));
-      PosPrinterManager.logger("end write bytes.length${bytes.length}");
-
-      if (isDisconnect) {
-        try {
-          await usbPrinter.close();
-          this.isConnected = false;
-          this.printer.connected = false;
-        } catch (e) {
-          PosPrinterManager.logger.error("Error : $e");
-          return ConnectionResponse.unknown;
-        }
-      }
       return ConnectionResponse.success;
     } else {
       return ConnectionResponse.unsupport;
