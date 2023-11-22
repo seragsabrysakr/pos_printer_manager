@@ -1,10 +1,7 @@
 import 'package:easy_logger/easy_logger.dart';
-
 export 'package:pos_printer_manager/models/network_printer.dart';
 export 'package:pos_printer_manager/models/bluetooth_printer.dart';
 export 'package:pos_printer_manager/models/usb_printer.dart';
-export 'package:pos_printer_manager/services/bluetooth_printer_manager.dart';
-export 'package:pos_printer_manager/services/network_printer_manager.dart';
 export 'package:pos_printer_manager/services/usb_printer_manager.dart';
 export 'package:pos_printer_manager/enums/bluetooth_printer_type.dart';
 export 'package:pos_printer_manager/enums/connection_response.dart';

@@ -15,10 +15,14 @@ dependencies:
   esc_pos_utils:
     git:
       url: https://github.com/thitlwincoder/esc_pos_utils.git
+  flutter_usb_printer:
+    git:
+      url: https://github.com/kechankrisna/flutter_usb_printer
   easy_logger: ^0.0.2
   printing: ^5.11.0
   win32: ^5.0.7
   ffi: ^2.1.0
+
 dependency_overrides:
   image: ^4.0.02
 
