@@ -128,9 +128,9 @@ packages:
     dependency: "direct main"
     description:
       path: "."
-      ref: "fix/null_exception_handling"
-      resolved-ref: "43a051559f6d2d0d64a343cb98c19a40b45ba80b"
-      url: "https://github.com/Jerinji2016/flutter_usb_printer.git"
+      ref: HEAD
+      resolved-ref: "107d42fb2edb9b105c72631662eff8e768dc8fe4"
+      url: "https://github.com/DctrBinary/flutter_usb_printer.git"
     source: git
     version: "0.1.0+1"
   flutter_web_plugins:
