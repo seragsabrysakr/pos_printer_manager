@@ -129,8 +129,8 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: bd2af8ede76e5248088c038922fd5a299498b93f
-      url: "https://github.com/kechankrisna/flutter_usb_printer"
+      resolved-ref: d18bbbe51240bc6a22c213e346e4094376599bde
+      url: "https://github.com/bonaparta13/flutter_usb_printer.git"
     source: git
     version: "0.1.0+1"
   flutter_web_plugins:
@@ -371,10 +371,10 @@ packages:
     dependency: transitive
     description:
       name: vm_service
-      sha256: f652077d0bdf60abe4c1f6377448e8655008eef28f128bc023f7b5e8dfeb48fc
+      sha256: "5c5f338a667b4c644744b661f309fb8080bb94b18a7e91ef1dbd343bed00ed6d"
       url: "https://pub.dev"
     source: hosted
-    version: "14.2.4"
+    version: "14.2.5"
   win32:
     dependency: "direct main"
     description:

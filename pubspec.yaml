@@ -17,7 +17,7 @@ dependencies:
       url: https://github.com/bonaparta13/esc_pos_utils.git
   flutter_usb_printer:
     git:
-      url: https://github.com/kechankrisna/flutter_usb_printer
+      url: https://github.com/bonaparta13/flutter_usb_printer.git
   easy_logger: ^0.0.2
   printing: ^5.11.0
   win32: ^5.0.7
