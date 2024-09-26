@@ -81,6 +81,15 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.17.0"
+  drago_usb_printer:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "578fd7d73c6cced7a0f59f4168c14a2bc7b1afe0"
+      url: "https://github.com/devstar1224/drago_usb_printer.git"
+    source: git
+    version: "0.1.0"
   easy_logger:
     dependency: "direct main"
     description:
@@ -124,15 +133,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_usb_printer:
-    dependency: "direct main"
-    description:
-      path: "."
-      ref: HEAD
-      resolved-ref: d18bbbe51240bc6a22c213e346e4094376599bde
-      url: "https://github.com/bonaparta13/flutter_usb_printer.git"
-    source: git
-    version: "0.1.0+1"
   flutter_web_plugins:
     dependency: transitive
     description: flutter
@@ -392,5 +392,5 @@ packages:
     source: hosted
     version: "6.3.0"
 sdks:
-  dart: ">=3.3.0 <4.0.0"
+  dart: ">=3.4.0 <4.0.0"
   flutter: ">=3.18.0-18.0.pre.54"

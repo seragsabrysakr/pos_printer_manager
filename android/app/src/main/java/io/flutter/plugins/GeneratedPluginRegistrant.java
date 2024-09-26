@@ -16,9 +16,9 @@ public final class GeneratedPluginRegistrant {
   private static final String TAG = "GeneratedPluginRegistrant";
   public static void registerWith(@NonNull FlutterEngine flutterEngine) {
     try {
-      flutterEngine.getPlugins().add(new app.mylekha.client.flutter_usb_printer.FlutterUsbPrinterPlugin());
+      flutterEngine.getPlugins().add(new app.sks.client.drago_usb_printer.DragoUsbPrinterPlugin());
     } catch (Exception e) {
-      Log.e(TAG, "Error registering plugin flutter_usb_printer, app.mylekha.client.flutter_usb_printer.FlutterUsbPrinterPlugin", e);
+      Log.e(TAG, "Error registering plugin drago_usb_printer, app.sks.client.drago_usb_printer.DragoUsbPrinterPlugin", e);
     }
     try {
       flutterEngine.getPlugins().add(new net.nfet.flutter.printing.PrintingPlugin());

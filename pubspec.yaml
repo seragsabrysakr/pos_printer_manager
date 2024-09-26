@@ -15,14 +15,13 @@ dependencies:
   esc_pos_utils:
     git:
       url: https://github.com/bonaparta13/esc_pos_utils.git
-  flutter_usb_printer:
-    git:
-      url: https://github.com/bonaparta13/flutter_usb_printer.git
   easy_logger: ^0.0.2
   printing: ^5.11.0
   win32: ^5.0.7
   ffi: ^2.1.0
-
+  drago_usb_printer:
+    git:
+      url: https://github.com/devstar1224/drago_usb_printer.git
 dependency_overrides:
   image: ^4.0.02
 
