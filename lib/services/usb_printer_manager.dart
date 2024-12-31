@@ -1,13 +1,15 @@
 import 'dart:ffi';
 import 'dart:io';
 import 'dart:typed_data';
+
 import 'package:drago_usb_printer/drago_usb_printer.dart';
-import 'package:esc_pos_utils/esc_pos_utils.dart';
+import 'package:esc_pos_utils_plus/esc_pos_utils_plus.dart';
 import 'package:ffi/ffi.dart';
-import 'package:win32/win32.dart';
 import 'package:pos_printer_manager/models/pos_printer.dart';
 import 'package:pos_printer_manager/pos_printer_manager.dart';
 import 'package:pos_printer_manager/services/printer_manager.dart';
+import 'package:win32/win32.dart';
+
 import 'extension.dart';
 import 'usb_service.dart';
 

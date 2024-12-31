@@ -12,9 +12,7 @@ dependencies:
     sdk: flutter
   # flutter_blue:
   #   path: ./../flutter_blue
-  esc_pos_utils:
-    git:
-      url: https://github.com/thitlwincoder/esc_pos_utils.git
+  esc_pos_utils_plus: ^2.0.4
   easy_logger: ^0.0.2
   printing: ^5.11.0
   win32: ^5.0.7
